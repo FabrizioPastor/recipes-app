@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import RxSwift
+import SDWebImage
 
 class HomeView: UIViewController {
 
@@ -69,6 +70,8 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         cell.recipeDificulty.text = recipes[indexPath.row].dificulty
         cell.recipeTime.text = String(recipes[indexPath.row].duration)
         cell.recipeCountry.text = recipes[indexPath.row].originContry
+        guard let url = URL(string: recipes[indexPath.row].image ) else { return cell }
+        cell.reipeImage.sd_setImage(with: url, completed: nil)
         return cell
     }
     
