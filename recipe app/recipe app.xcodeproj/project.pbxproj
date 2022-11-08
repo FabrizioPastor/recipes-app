@@ -18,6 +18,8 @@
 		491C3CFD291A163100A62CDD /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CFB291A163100A62CDD /* HomeView.xib */; };
 		493632BA291A919500FA9BB4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632B9291A919500FA9BB4 /* HomeViewModel.swift */; };
 		493632BC291A9E2300FA9BB4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632BB291A9E2300FA9BB4 /* Recipe.swift */; };
+		493632C1291A9FCB00FA9BB4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632C0291A9FCB00FA9BB4 /* ApiManager.swift */; };
+		493632C3291AA05500FA9BB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632C2291AA05500FA9BB4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		491C3CFB291A163100A62CDD /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		493632B9291A919500FA9BB4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		493632BB291A9E2300FA9BB4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		493632C0291A9FCB00FA9BB4 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		493632C2291AA05500FA9BB4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				491C3CEB291A0CCD00A62CDD /* Home */,
 				491C3CEC291A0CD400A62CDD /* Detail */,
 				491C3CED291A0CDF00A62CDD /* Map */,
+				493632BD291A9F9500FA9BB4 /* Resources */,
 				491C3CE0291A0BF900A62CDD /* Assets.xcassets */,
 				491C3CE2291A0BF900A62CDD /* LaunchScreen.storyboard */,
 				491C3CE5291A0BF900A62CDD /* Info.plist */,
@@ -136,6 +141,23 @@
 				493632BB291A9E2300FA9BB4 /* Recipe.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		493632BD291A9F9500FA9BB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				493632BE291A9FA300FA9BB4 /* Networking */,
+				493632C2291AA05500FA9BB4 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		493632BE291A9FA300FA9BB4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				493632C0291A9FCB00FA9BB4 /* ApiManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493632C1291A9FCB00FA9BB4 /* ApiManager.swift in Sources */,
 				491C3CF5291A0F4600A62CDD /* HomeRouter.swift in Sources */,
 				493632BA291A919500FA9BB4 /* HomeViewModel.swift in Sources */,
 				493632BC291A9E2300FA9BB4 /* Recipe.swift in Sources */,
@@ -217,6 +240,7 @@
 				491C3CDA291A0BF800A62CDD /* SceneDelegate.swift in Sources */,
 				491C3CFC291A163100A62CDD /* HomeView.swift in Sources */,
 				491C3CF8291A117200A62CDD /* CustomRecipeCell.swift in Sources */,
+				493632C3291AA05500FA9BB4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
