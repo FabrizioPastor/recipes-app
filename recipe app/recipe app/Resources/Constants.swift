@@ -9,7 +9,7 @@ import Foundation
 
 struct Constants {
     struct URL {
-        static let mainUrl: String = "http://demo4093731.mockable.io/"
+        static let mainUrl: String = "https://demo4093731.mockable.io/"
     }
     
     struct Endpoints {

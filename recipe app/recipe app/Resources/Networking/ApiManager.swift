@@ -9,10 +9,10 @@ import Foundation
 import RxSwift
 
 struct ApiManager {
-    func getRecipes() -> Observable<[Recipe]> {
+    static func getRecipes() -> Observable<[Recipe]> {
         return Observable.create { observer in
             guard let url = URL(string: Constants.URL.mainUrl + Constants.Endpoints.recipes) else { fatalError("No se pudo crear al URL") }
-            let session = URLSession(configuration: .default)
+            let session = URLSession.shared
             let task = session.dataTask(with: url) { data, response, error in
                 guard let data = data else { return }
                 do {

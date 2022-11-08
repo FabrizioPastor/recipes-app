@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class HomeViewModel {
     
@@ -17,6 +18,10 @@ class HomeViewModel {
         self.router = router
         
         router.setSourceView(sourceView: view)
+    }
+    
+    func getRecipesData() -> Observable<[Recipe]> {
+        return ApiManager.getRecipes()
     }
     
 }
