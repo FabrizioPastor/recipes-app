@@ -22,6 +22,10 @@
 		493632C3291AA05500FA9BB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632C2291AA05500FA9BB4 /* Constants.swift */; };
 		493632C6291AA14900FA9BB4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 493632C5291AA14900FA9BB4 /* RxCocoa */; };
 		493632C8291AA14900FA9BB4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 493632C7291AA14900FA9BB4 /* RxSwift */; };
+		493632CB291AB84100FA9BB4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 493632CA291AB84100FA9BB4 /* SDWebImage */; };
+		493632CD291AB84100FA9BB4 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 493632CC291AB84100FA9BB4 /* SDWebImageMapKit */; };
+		493632D1291AC2A500FA9BB4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632CF291AC2A500FA9BB4 /* DetailView.swift */; };
+		493632D2291AC2A500FA9BB4 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493632D0291AC2A500FA9BB4 /* DetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,8 @@
 		493632BB291A9E2300FA9BB4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		493632C0291A9FCB00FA9BB4 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		493632C2291AA05500FA9BB4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		493632CF291AC2A500FA9BB4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		493632D0291AC2A500FA9BB4 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +53,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493632CB291AB84100FA9BB4 /* SDWebImage in Frameworks */,
 				493632C8291AA14900FA9BB4 /* RxSwift in Frameworks */,
+				493632CD291AB84100FA9BB4 /* SDWebImageMapKit in Frameworks */,
 				493632C6291AA14900FA9BB4 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +109,7 @@
 		491C3CEC291A0CD400A62CDD /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				493632CE291AC28B00FA9BB4 /* View */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -164,6 +173,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		493632CE291AC28B00FA9BB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				493632CF291AC2A500FA9BB4 /* DetailView.swift */,
+				493632D0291AC2A500FA9BB4 /* DetailView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +201,8 @@
 			packageProductDependencies = (
 				493632C5291AA14900FA9BB4 /* RxCocoa */,
 				493632C7291AA14900FA9BB4 /* RxSwift */,
+				493632CA291AB84100FA9BB4 /* SDWebImage */,
+				493632CC291AB84100FA9BB4 /* SDWebImageMapKit */,
 			);
 			productName = "recipe app";
 			productReference = 491C3CD4291A0BF800A62CDD /* recipe app.app */;
@@ -214,6 +234,7 @@
 			mainGroup = 491C3CCB291A0BF800A62CDD;
 			packageReferences = (
 				493632C4291AA14900FA9BB4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				493632C9291AB84100FA9BB4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 491C3CD5291A0BF800A62CDD /* Products */;
 			projectDirPath = "";
@@ -233,6 +254,7 @@
 				491C3CFD291A163100A62CDD /* HomeView.xib in Resources */,
 				491C3CE4291A0BF900A62CDD /* LaunchScreen.storyboard in Resources */,
 				491C3CE1291A0BF900A62CDD /* Assets.xcassets in Resources */,
+				493632D2291AC2A500FA9BB4 /* DetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +268,7 @@
 				493632C1291A9FCB00FA9BB4 /* ApiManager.swift in Sources */,
 				491C3CF5291A0F4600A62CDD /* HomeRouter.swift in Sources */,
 				493632BA291A919500FA9BB4 /* HomeViewModel.swift in Sources */,
+				493632D1291AC2A500FA9BB4 /* DetailView.swift in Sources */,
 				493632BC291A9E2300FA9BB4 /* Recipe.swift in Sources */,
 				491C3CD8291A0BF800A62CDD /* AppDelegate.swift in Sources */,
 				491C3CDA291A0BF800A62CDD /* SceneDelegate.swift in Sources */,
@@ -475,6 +498,14 @@
 				kind = branch;
 			};
 		};
+		493632C9291AB84100FA9BB4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -487,6 +518,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 493632C4291AA14900FA9BB4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		493632CA291AB84100FA9BB4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 493632C9291AB84100FA9BB4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		493632CC291AB84100FA9BB4 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 493632C9291AB84100FA9BB4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
