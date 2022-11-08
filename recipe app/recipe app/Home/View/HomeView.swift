@@ -9,20 +9,35 @@ import UIKit
 
 class HomeView: UIViewController {
 
+    @IBOutlet weak var recipeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor =  .red
+        recipeTableView.delegate = self
+        recipeTableView.dataSource = self
+        configureTableView()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureTableView() {
+        recipeTableView.register(UINib(nibName: "CustomRecipeCell", bundle: Bundle.main), forCellReuseIdentifier: "CustomRecipeCell")
     }
-    */
+    
+}
 
+extension HomeView: UITableViewDelegate, UITableViewDataSource {
+    //MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170
+    }
+        
+    //MARK: - UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        6
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomRecipeCell", for: indexPath) as? CustomRecipeCell else { return UITableViewCell() }
+        return cell
+    }
+    
+    
 }

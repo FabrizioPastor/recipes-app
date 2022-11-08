@@ -11,9 +11,11 @@
 		491C3CDA291A0BF800A62CDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C3CD9291A0BF800A62CDD /* SceneDelegate.swift */; };
 		491C3CE1291A0BF900A62CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CE0291A0BF900A62CDD /* Assets.xcassets */; };
 		491C3CE4291A0BF900A62CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CE2291A0BF900A62CDD /* LaunchScreen.storyboard */; };
-		491C3CF0291A0D2900A62CDD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C3CEE291A0D2900A62CDD /* HomeView.swift */; };
-		491C3CF1291A0D2900A62CDD /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CEF291A0D2900A62CDD /* HomeView.xib */; };
 		491C3CF5291A0F4600A62CDD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C3CF4291A0F4600A62CDD /* HomeRouter.swift */; };
+		491C3CF8291A117200A62CDD /* CustomRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C3CF6291A117200A62CDD /* CustomRecipeCell.swift */; };
+		491C3CF9291A117200A62CDD /* CustomRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CF7291A117200A62CDD /* CustomRecipeCell.xib */; };
+		491C3CFC291A163100A62CDD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C3CFA291A163100A62CDD /* HomeView.swift */; };
+		491C3CFD291A163100A62CDD /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CFB291A163100A62CDD /* HomeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +25,11 @@
 		491C3CE0291A0BF900A62CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		491C3CE3291A0BF900A62CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		491C3CE5291A0BF900A62CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		491C3CEE291A0D2900A62CDD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		491C3CEF291A0D2900A62CDD /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		491C3CF4291A0F4600A62CDD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		491C3CF6291A117200A62CDD /* CustomRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRecipeCell.swift; sourceTree = "<group>"; };
+		491C3CF7291A117200A62CDD /* CustomRecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomRecipeCell.xib; sourceTree = "<group>"; };
+		491C3CFA291A163100A62CDD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		491C3CFB291A163100A62CDD /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,10 @@
 		491C3CF2291A0E5800A62CDD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				491C3CEE291A0D2900A62CDD /* HomeView.swift */,
-				491C3CEF291A0D2900A62CDD /* HomeView.xib */,
+				491C3CF6291A117200A62CDD /* CustomRecipeCell.swift */,
+				491C3CF7291A117200A62CDD /* CustomRecipeCell.xib */,
+				491C3CFA291A163100A62CDD /* HomeView.swift */,
+				491C3CFB291A163100A62CDD /* HomeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,9 +174,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491C3CF9291A117200A62CDD /* CustomRecipeCell.xib in Resources */,
+				491C3CFD291A163100A62CDD /* HomeView.xib in Resources */,
 				491C3CE4291A0BF900A62CDD /* LaunchScreen.storyboard in Resources */,
 				491C3CE1291A0BF900A62CDD /* Assets.xcassets in Resources */,
-				491C3CF1291A0D2900A62CDD /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,10 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491C3CF0291A0D2900A62CDD /* HomeView.swift in Sources */,
 				491C3CF5291A0F4600A62CDD /* HomeRouter.swift in Sources */,
 				491C3CD8291A0BF800A62CDD /* AppDelegate.swift in Sources */,
 				491C3CDA291A0BF800A62CDD /* SceneDelegate.swift in Sources */,
+				491C3CFC291A163100A62CDD /* HomeView.swift in Sources */,
+				491C3CF8291A117200A62CDD /* CustomRecipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
