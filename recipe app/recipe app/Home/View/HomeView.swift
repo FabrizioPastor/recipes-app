@@ -9,14 +9,23 @@ import UIKit
 
 class HomeView: UIViewController {
 
+    //MARK: - Atributos
+    private var router = HomeRouter()
+    private var viewModel = HomeViewModel()
+    
+    //MARK: - Outlets
     @IBOutlet weak var recipeTableView: UITableView!
+    
+    //MARK: - Métodos de clase
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.bind(view: self, router: router)
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
         configureTableView()
     }
 
+    //MARK: - Métodos de usuario
     func configureTableView() {
         recipeTableView.register(UINib(nibName: "CustomRecipeCell", bundle: Bundle.main), forCellReuseIdentifier: "CustomRecipeCell")
     }
