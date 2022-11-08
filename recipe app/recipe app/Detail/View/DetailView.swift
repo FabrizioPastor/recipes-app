@@ -9,21 +9,23 @@ import UIKit
 
 class DetailView: UIViewController {
 
+    //MARK: - Outlets
+    @IBOutlet weak var recipeTitle: UILabel!
+    @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var recipeDescription: UILabel!
+    @IBOutlet weak var recipeBackgrounImage: UIImageView!
+    
+    //MARK: - Class Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addGradient()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - User Methods
+    private func addGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.systemBackground.cgColor ]
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 1)
     }
-    */
-
 }

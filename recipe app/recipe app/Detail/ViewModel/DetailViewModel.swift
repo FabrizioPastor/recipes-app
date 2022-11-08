@@ -1,0 +1,22 @@
+//
+//  DetailViewModel.swift
+//  recipe app
+//
+//  Created by FABRIZIO on 8/11/22.
+//
+
+import Foundation
+
+class DetailViewModel {
+    
+    private weak var view: DetailView?
+    private var router: DetailRouter?
+    
+    func bind(view: DetailView, router: DetailRouter) {
+        self.view = view
+        self.router = router
+        
+        router.setSourceView(sourceView: view)
+    }
+    
+}
