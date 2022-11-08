@@ -16,6 +16,8 @@
 		491C3CF9291A117200A62CDD /* CustomRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CF7291A117200A62CDD /* CustomRecipeCell.xib */; };
 		491C3CFC291A163100A62CDD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C3CFA291A163100A62CDD /* HomeView.swift */; };
 		491C3CFD291A163100A62CDD /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C3CFB291A163100A62CDD /* HomeView.xib */; };
+		493632BA291A919500FA9BB4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632B9291A919500FA9BB4 /* HomeViewModel.swift */; };
+		493632BC291A9E2300FA9BB4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632BB291A9E2300FA9BB4 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		491C3CF7291A117200A62CDD /* CustomRecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomRecipeCell.xib; sourceTree = "<group>"; };
 		491C3CFA291A163100A62CDD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		491C3CFB291A163100A62CDD /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		493632B9291A919500FA9BB4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		493632BB291A9E2300FA9BB4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,10 @@
 		491C3CEB291A0CCD00A62CDD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				491C3CF3291A0EA000A62CDD /* Router */,
+				493632B7291A916C00FA9BB4 /* Model */,
 				491C3CF2291A0E5800A62CDD /* View */,
+				493632B6291A916100FA9BB4 /* ViewModel */,
+				491C3CF3291A0EA000A62CDD /* Router */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -114,6 +120,22 @@
 				491C3CF4291A0F4600A62CDD /* HomeRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		493632B6291A916100FA9BB4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				493632B9291A919500FA9BB4 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		493632B7291A916C00FA9BB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				493632BB291A9E2300FA9BB4 /* Recipe.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				491C3CF5291A0F4600A62CDD /* HomeRouter.swift in Sources */,
+				493632BA291A919500FA9BB4 /* HomeViewModel.swift in Sources */,
+				493632BC291A9E2300FA9BB4 /* Recipe.swift in Sources */,
 				491C3CD8291A0BF800A62CDD /* AppDelegate.swift in Sources */,
 				491C3CDA291A0BF800A62CDD /* SceneDelegate.swift in Sources */,
 				491C3CFC291A163100A62CDD /* HomeView.swift in Sources */,
