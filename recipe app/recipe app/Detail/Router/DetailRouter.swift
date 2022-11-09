@@ -21,4 +21,9 @@ class DetailRouter {
         self.sourceView  = sourceView
     }
     
+    func navigateToMapView() {
+        let mapView = MapRouter().viewController
+        sourceView?.navigationController?.pushViewController(mapView, animated: true)
+    }
+    
 }

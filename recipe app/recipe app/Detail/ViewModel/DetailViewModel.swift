@@ -24,4 +24,8 @@ class DetailViewModel {
         return ApiManager.getDetailRecipes(recipeId: recipeId)
     }
     
+    func makeMapView() {
+        router?.navigateToMapView()
+    }
+    
 }

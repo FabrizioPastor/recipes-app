@@ -31,6 +31,11 @@ class DetailView: UIViewController {
         getDetailData()
     }
     
+    
+    @IBAction func viewMapPressed(_ sender: UIButton) {
+        viewModel.makeMapView()
+    }
+    
     //MARK: - User Methods
     private func addGradient() {
         let gradientLayer = CAGradientLayer()

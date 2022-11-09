@@ -44,6 +44,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="View in map"/>
+                    <connections>
+                        <action selector="viewMapPressed:" destination="-1" eventType="touchUpInside" id="tEk-zc-SAR"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="aoE-al-nvA"/>
