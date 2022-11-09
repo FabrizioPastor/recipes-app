@@ -6,24 +6,32 @@
 //
 
 import UIKit
+import MapKit
 
 class MapView: UIViewController {
 
+    @IBOutlet weak var map: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Set initial location in Honolulu
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        map.centerToLocation(initialLocation, regionRadius: CLLocationDistance(100))
+        let restaurant = Restaurant(coordinate: CLLocationCoordinate2D(latitude: 21.282778, longitude: -157.829444))
+        map.addAnnotation(restaurant)
     }
 
+}
 
-    /*
-    // MARK: - Navigation
+class Restaurant: NSObject, MKAnnotation {
+  let coordinate: CLLocationCoordinate2D
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  init(
+    coordinate: CLLocationCoordinate2D
+  ) {
+    self.coordinate = coordinate
 
+    super.init()
+  }
 }

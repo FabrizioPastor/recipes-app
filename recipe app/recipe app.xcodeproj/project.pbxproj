@@ -31,6 +31,7 @@
 		493632DB291B031700FA9BB4 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493632DA291B031700FA9BB4 /* RecipeDetail.swift */; };
 		49B963F0291B479100693DD1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B963EE291B479100693DD1 /* MapView.swift */; };
 		49B963F1291B479100693DD1 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B963EF291B479100693DD1 /* MapView.xib */; };
+		49B963F4291B560600693DD1 /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B963F3291B560600693DD1 /* MKMapViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		493632DA291B031700FA9BB4 /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		49B963EE291B479100693DD1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		49B963EF291B479100693DD1 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		49B963F3291B560600693DD1 /* MKMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		493632BD291A9F9500FA9BB4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49B963F2291B55E900693DD1 /* Extensions */,
 				493632BE291A9FA300FA9BB4 /* Networking */,
 				493632C2291AA05500FA9BB4 /* Constants.swift */,
 			);
@@ -227,6 +230,14 @@
 				49B963EF291B479100693DD1 /* MapView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		49B963F2291B55E900693DD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49B963F3291B560600693DD1 /* MKMapViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B963F4291B560600693DD1 /* MKMapViewExtension.swift in Sources */,
 				493632C1291A9FCB00FA9BB4 /* ApiManager.swift in Sources */,
 				493632DB291B031700FA9BB4 /* RecipeDetail.swift in Sources */,
 				493632D7291AF6D300FA9BB4 /* DetailRouter.swift in Sources */,
