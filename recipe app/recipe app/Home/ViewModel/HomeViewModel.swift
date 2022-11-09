@@ -24,4 +24,8 @@ class HomeViewModel {
         return ApiManager.getRecipes()
     }
     
+    func makeDetailView(recipeId: Int) {
+        router?.navegateToDetail(recipeId: recipeId)
+    }
+    
 }

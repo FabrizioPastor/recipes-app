@@ -21,4 +21,10 @@ class HomeRouter {
         self.sourceView = sourceView
     }
     
+    func navegateToDetail(recipeId: Int) {
+        let detailView = DetailRouter().viewController
+        detailView.recipeId = recipeId
+        sourceView?.navigationController?.pushViewController(detailView, animated: true)
+    }
+    
 }

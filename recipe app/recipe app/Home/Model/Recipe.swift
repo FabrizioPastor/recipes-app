@@ -16,6 +16,7 @@ struct Recipes: Codable {
 }
 
 struct Recipe: Codable {
+    let id: Int
     let name: String
     let dificulty: String
     let duration: Double
@@ -23,6 +24,7 @@ struct Recipe: Codable {
     let image: String
     
     enum CodingKeys: String, CodingKey {
+        case id
         case name = "recipe_name"
         case dificulty = "recipe_dificulty"
         case duration = "recipe_duration"

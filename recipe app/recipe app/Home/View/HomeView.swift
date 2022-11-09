@@ -29,6 +29,7 @@ class HomeView: UIViewController {
         recipeTableView.dataSource = self
         configureTableView()
         getData()
+        self.navigationItem.title = "Recipes App"
     }
 
     //MARK: - Métodos de usuario
@@ -57,6 +58,10 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.makeDetailView(recipeId: self.recipes[indexPath.row].id)
     }
         
     //MARK: - UITableViewDataSource

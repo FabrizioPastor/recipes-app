@@ -12,7 +12,7 @@ class DetailRouter {
     
     private var sourceView: DetailView?
     
-    var viewController: UIViewController {
+    var viewController: DetailView {
         return DetailView()
     }
     

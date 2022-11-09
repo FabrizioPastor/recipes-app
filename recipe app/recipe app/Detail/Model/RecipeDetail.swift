@@ -17,6 +17,7 @@ struct RecipesDetail: Codable {
 }
 
 struct RecipeDetail: Codable {
+    let id: Int
     let name: String
     let dificulty: String
     let duration: Double
@@ -25,6 +26,7 @@ struct RecipeDetail: Codable {
     let description: String
     
     enum CodingKeys: String, CodingKey {
+        case id
         case name = "recipe_name"
         case dificulty = "recipe_dificulty"
         case duration = "recipe_duration"

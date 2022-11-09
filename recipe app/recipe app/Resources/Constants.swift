@@ -14,6 +14,6 @@ struct Constants {
     
     struct Endpoints {
         static let recipes: String = "recipe"
-        static let recipeDetail: String = ""
+        static let recipeDetail: String = "detail"
     }
 }
