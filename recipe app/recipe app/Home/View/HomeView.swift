@@ -9,6 +9,7 @@ import UIKit
 import Foundation
 import RxSwift
 import SDWebImage
+import SkeletonView
 
 class HomeView: UIViewController {
 
@@ -28,6 +29,7 @@ class HomeView: UIViewController {
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
         configureTableView()
+        setupSkeleton()
         getData()
         self.navigationItem.title = "Recipes App"
     }
@@ -38,6 +40,7 @@ class HomeView: UIViewController {
     }
     
     func getData() {
+        self.recipeTableView.showAnimatedGradientSkeleton()
         viewModel.getRecipesData()
             .subscribe(on: MainScheduler.instance)
             .observe(on: MainScheduler.instance)
@@ -49,12 +52,17 @@ class HomeView: UIViewController {
     
     func reloadTableView() {
         DispatchQueue.main.async {
+            self.recipeTableView.hideSkeleton()
             self.recipeTableView.reloadData()
         }
     }
+    
+    private func setupSkeleton() {
+        self.recipeTableView.isSkeletonable = true
+    }
 }
 
-extension HomeView: UITableViewDelegate, UITableViewDataSource {
+extension HomeView: UITableViewDelegate, SkeletonTableViewDataSource {
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
@@ -80,5 +88,12 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+       return "CustomRecipeCell"
+    }
+     
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
 }
+

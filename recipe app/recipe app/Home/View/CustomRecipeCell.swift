@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class CustomRecipeCell: UITableViewCell {
 
@@ -17,6 +18,7 @@ class CustomRecipeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupSkeleton()
         recipeName.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
 
@@ -24,6 +26,21 @@ class CustomRecipeCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func setupSkeleton() {
+        self.isSkeletonable = true
+        self.reipeImage.isSkeletonable = true
+        self.reipeImage.skeletonCornerRadius = 10
+        self.recipeName.isSkeletonable =  true
+        recipeName.skeletonCornerRadius = 30
+        self.recipeTime.isSkeletonable =  true
+        recipeTime.skeletonCornerRadius = 30
+        self.recipeDificulty.isSkeletonable =  true
+        recipeDificulty.skeletonCornerRadius = 30
+        self.recipeCountry.isSkeletonable =  true
+        recipeCountry.skeletonCornerRadius = 30
+        
     }
     
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import SkeletonView
 
 class DetailView: UIViewController {
 
@@ -27,6 +28,7 @@ class DetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        setupSkeleton()
         viewModel.bind(view: self, router: router)
         getDetailData()
     }
@@ -54,6 +56,7 @@ class DetailView: UIViewController {
     }
     
     private func getDetailData() {
+        startSkeleton()
         guard let recipeId = recipeId else {return}
         viewModel.getRecipeData(recipeId: recipeId )
             .subscribe(on: MainScheduler.instance)
@@ -66,10 +69,32 @@ class DetailView: UIViewController {
     
     private func UpdateView() {
         DispatchQueue.main.async {
+            self.stopSkeleton()
             self.recipeTitle.text = self.recipeDetail?.name
             self.recipeDescription.text = self.recipeDetail?.description
             guard let url = URL(string: self.recipeDetail?.image ?? "") else { return }
             self.recipeBackgrounImage.sd_setImage(with: url, completed: nil)
         }
+    }
+    
+    private func setupSkeleton() {
+        recipeTitle.isSkeletonable = true
+        recipeTitle.skeletonCornerRadius = 10
+        recipeDescription.isSkeletonable = true
+        recipeDescription.skeletonCornerRadius  = 10
+        recipeBackgrounImage.isSkeletonable = true
+        recipeBackgrounImage.skeletonCornerRadius = 10
+    }
+    
+    private func startSkeleton() {
+        recipeTitle.showAnimatedGradientSkeleton()
+        recipeDescription.showAnimatedGradientSkeleton()
+        recipeBackgrounImage.showAnimatedGradientSkeleton()
+    }
+    
+    private func stopSkeleton() {
+        recipeTitle.hideSkeleton()
+        recipeDescription.hideSkeleton()
+        recipeBackgrounImage.hideSkeleton()
     }
 }
