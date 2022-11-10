@@ -22,6 +22,7 @@ struct RecipeDetail: Codable {
     let dificulty: String
     let duration: Double
     let originContry: String
+    let countryCoordenates: [Double]
     let image: String
     let description: String
     
@@ -31,6 +32,7 @@ struct RecipeDetail: Codable {
         case dificulty = "recipe_dificulty"
         case duration = "recipe_duration"
         case originContry = "recipe_country"
+        case countryCoordenates = "recipe_coordenates"
         case image = "recipe_image"
         case description = "recipe_description"
     }
