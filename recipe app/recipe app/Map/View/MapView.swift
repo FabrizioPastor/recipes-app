@@ -10,18 +10,24 @@ import MapKit
 
 class MapView: UIViewController {
 
+    deinit {
+        print("Liberando MapView")
+    }
+    
     @IBOutlet weak var map: MKMapView!
     
     var router = MapRouter()
     var viewModel = MapViewModel()
     
+    var coordenates = [Double]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.bind(view: self, router: router)
         // Set initial location in Honolulu
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        map.centerToLocation(initialLocation, regionRadius: CLLocationDistance(100))
-        let restaurant = Restaurant(coordinate: CLLocationCoordinate2D(latitude: 21.282778, longitude: -157.829444))
+        let initialLocation = CLLocation(latitude: coordenates.first ?? 0, longitude: coordenates.last ?? 0)
+        map.centerToLocation(initialLocation, regionRadius: CLLocationDistance(1000))
+        let restaurant = Restaurant(coordinate: CLLocationCoordinate2D(latitude: coordenates.first ?? 0, longitude: coordenates.last ?? 0))
         map.addAnnotation(restaurant)
     }
     

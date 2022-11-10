@@ -13,6 +13,10 @@ import SkeletonView
 
 class HomeView: UIViewController {
 
+    deinit {
+        print("Liberando homeView")
+    }
+    
     //MARK: - Atributos
     private var router = HomeRouter()
     private var viewModel = HomeViewModel()
@@ -78,13 +82,17 @@ extension HomeView: UITableViewDelegate, SkeletonTableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomRecipeCell", for: indexPath) as? CustomRecipeCell else { return UITableViewCell() }
+        
         cell.recipeName.text = recipes[indexPath.row].name
         cell.recipeDificulty.text = recipes[indexPath.row].dificulty
         cell.recipeTime.text = String(recipes[indexPath.row].duration)
         cell.recipeCountry.text = recipes[indexPath.row].originContry
+        
         guard let url = URL(string: recipes[indexPath.row].image ) else { return cell }
         cell.reipeImage.sd_setImage(with: url, completed: nil)
+        
         return cell
     }
     

@@ -9,7 +9,10 @@ import Foundation
 import RxSwift
 
 struct ApiManager {
-    static func getRecipes() -> Observable<[Recipe]> {
+    
+    static let shared = ApiManager()
+    
+    func getRecipes() -> Observable<[Recipe]> {
         return Observable.create { observer in
             guard let url = URL(string: Constants.URL.mainUrl + Constants.Endpoints.recipes) else { fatalError("No se pudo crear al URL") }
             let session = URLSession.shared
@@ -32,7 +35,7 @@ struct ApiManager {
         }
     }
     
-    static func getDetailRecipes(recipeId: Int) -> Observable<RecipeDetail> {
+    func getDetailRecipes(recipeId: Int) -> Observable<RecipeDetail> {
         return Observable.create { observer in
             guard let url = URL(string: Constants.URL.mainUrl + Constants.Endpoints.recipeDetail) else { fatalError("No se pudo crear al URL") }
             let session = URLSession.shared

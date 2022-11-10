@@ -21,11 +21,11 @@ class DetailViewModel {
     }
     
     func getRecipeData(recipeId: Int) ->  Observable<RecipeDetail> {
-        return ApiManager.getDetailRecipes(recipeId: recipeId)
+        return ApiManager.shared.getDetailRecipes(recipeId: recipeId)
     }
     
-    func makeMapView() {
-        router?.navigateToMapView()
+    func makeMapView(coordenates: [Double]) {
+        router?.navigateToMapView(coordenates: coordenates)
     }
     
 }

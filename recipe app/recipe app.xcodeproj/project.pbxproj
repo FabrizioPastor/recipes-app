@@ -138,9 +138,9 @@
 		491C3CED291A0CDF00A62CDD /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				49B963ED291B477B00693DD1 /* View */,
 				49424403291BF88100DA3D05 /* ViewModel */,
 				49424400291BF53700DA3D05 /* Router */,
-				49B963ED291B477B00693DD1 /* View */,
 			);
 			path = Map;
 			sourceTree = "<group>";

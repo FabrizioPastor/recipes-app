@@ -35,7 +35,8 @@ class DetailView: UIViewController {
     
     
     @IBAction func viewMapPressed(_ sender: UIButton) {
-        viewModel.makeMapView()
+        guard let coordenates = self.recipeDetail?.countryCoordenates else {return}
+        viewModel.makeMapView(coordenates: coordenates)
     }
     
     //MARK: - User Methods

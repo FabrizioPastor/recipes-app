@@ -21,7 +21,7 @@ class HomeViewModel {
     }
     
     func getRecipesData() -> Observable<[Recipe]> {
-        return ApiManager.getRecipes()
+        return ApiManager.shared.getRecipes()
     }
     
     func makeDetailView(recipeId: Int) {
