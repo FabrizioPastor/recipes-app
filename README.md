@@ -38,5 +38,7 @@ Decidí utilizar MVVM en lugar de VIPER u otra alternativa debido a los siguient
 
 <br />
 
+Tuve que mandar la prueba antes debido a que tengo que viajar el fin de semana. Espero poder complir sus expectativas. Saludos ! 😃
+
 ----
 <div align="center">Generated using <a href="https://profilinator.rishav.dev/" target="_blank">Github Profilinator</a></div>
