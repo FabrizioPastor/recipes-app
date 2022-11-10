@@ -88,6 +88,7 @@ extension HomeView: UITableViewDelegate, SkeletonTableViewDataSource {
         return cell
     }
     
+    //MARK: - SkeletonTableViewDataSource
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
        return "CustomRecipeCell"
     }

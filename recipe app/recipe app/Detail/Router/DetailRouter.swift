@@ -10,7 +10,7 @@ import UIKit
 
 class DetailRouter {
     
-    private var sourceView: DetailView?
+    private weak var sourceView: DetailView?
     
     var viewController: DetailView {
         return DetailView()

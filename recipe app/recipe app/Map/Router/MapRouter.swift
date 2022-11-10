@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class MapRouter {
-    private var sourceView: MapView?
+    private weak var sourceView: MapView?
     
     var viewController: UIViewController {
         return MapView()

@@ -10,7 +10,7 @@ import UIKit
 
 class HomeRouter {
     
-    private var sourceView: HomeView?
+    private weak var sourceView: HomeView?
     
     var viewController: UIViewController {
         return HomeView()

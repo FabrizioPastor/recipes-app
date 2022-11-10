@@ -10,37 +10,43 @@ import SkeletonView
 
 class CustomRecipeCell: UITableViewCell {
 
+    //MARK: - Outlets
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var reipeImage: UIImageView!
     @IBOutlet weak var recipeTime: UILabel!
     @IBOutlet weak var recipeDificulty: UILabel!
     @IBOutlet weak var recipeCountry: UILabel!
     
+    @IBOutlet weak var timeTitle: UILabel!
+    @IBOutlet weak var dificultyTitle: UILabel!
+    @IBOutlet weak var originTitle: UILabel!
+    
+    
+    //MARK: - Métodos de clase
     override func awakeFromNib() {
         super.awakeFromNib()
         setupSkeleton()
         recipeName.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    //MARK: - Métodos de usuario
     private func setupSkeleton() {
         self.isSkeletonable = true
         self.reipeImage.isSkeletonable = true
         self.reipeImage.skeletonCornerRadius = 10
         self.recipeName.isSkeletonable =  true
-        recipeName.skeletonCornerRadius = 30
         self.recipeTime.isSkeletonable =  true
-        recipeTime.skeletonCornerRadius = 30
         self.recipeDificulty.isSkeletonable =  true
-        recipeDificulty.skeletonCornerRadius = 30
         self.recipeCountry.isSkeletonable =  true
-        recipeCountry.skeletonCornerRadius = 30
-        
+        self.timeTitle.isSkeletonable = true
+        self.dificultyTitle.isSkeletonable = true
+        self.originTitle.isSkeletonable = true
     }
     
 }
