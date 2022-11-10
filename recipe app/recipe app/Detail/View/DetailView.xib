@@ -25,23 +25,30 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5RD-aN-78Z">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggm-FK-6tO">
-                    <rect key="frame" x="16" y="440" width="361" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggm-FK-6tO">
+                    <rect key="frame" x="16" y="500" width="361" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="f5e-9z-zpT"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqP-XC-EVJ">
-                    <rect key="frame" x="16" y="565" width="361" height="253"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqP-XC-EVJ">
+                    <rect key="frame" x="16" y="623" width="361" height="195"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="195" id="qkg-NN-UEJ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-Db-1rL">
-                    <rect key="frame" x="69" y="497" width="254" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-Db-1rL">
+                    <rect key="frame" x="69.666666666666686" y="550" width="254" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5Ha-83-3MA"/>
+                        <constraint firstAttribute="width" constant="254" id="KGd-dv-bhZ"/>
+                    </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="View in map"/>
@@ -54,9 +61,17 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="5RD-aN-78Z" secondAttribute="bottom" id="5uy-1f-9Xs"/>
+                <constraint firstItem="aoE-al-nvA" firstAttribute="bottom" secondItem="pqP-XC-EVJ" secondAttribute="bottom" id="6l5-Yt-yC2"/>
                 <constraint firstItem="5RD-aN-78Z" firstAttribute="top" secondItem="bSc-OV-x6L" secondAttribute="top" id="7Bm-la-rx8"/>
+                <constraint firstItem="Xlm-Db-1rL" firstAttribute="centerX" secondItem="bSc-OV-x6L" secondAttribute="centerX" id="DcN-SH-NLg"/>
+                <constraint firstItem="pqP-XC-EVJ" firstAttribute="top" secondItem="Xlm-Db-1rL" secondAttribute="bottom" constant="23" id="LTz-Yo-OCS"/>
+                <constraint firstItem="aoE-al-nvA" firstAttribute="trailing" secondItem="Ggm-FK-6tO" secondAttribute="trailing" constant="16" id="Oyc-tg-uCe"/>
                 <constraint firstAttribute="trailing" secondItem="5RD-aN-78Z" secondAttribute="trailing" id="P1n-sf-sJA"/>
+                <constraint firstItem="Xlm-Db-1rL" firstAttribute="top" secondItem="Ggm-FK-6tO" secondAttribute="bottom" constant="14" id="Y0i-rR-Xsx"/>
+                <constraint firstItem="aoE-al-nvA" firstAttribute="trailing" secondItem="pqP-XC-EVJ" secondAttribute="trailing" constant="16" id="aUh-fk-nma"/>
+                <constraint firstItem="Ggm-FK-6tO" firstAttribute="leading" secondItem="aoE-al-nvA" secondAttribute="leading" constant="16" id="evB-eq-8XC"/>
                 <constraint firstItem="5RD-aN-78Z" firstAttribute="leading" secondItem="bSc-OV-x6L" secondAttribute="leading" id="oIU-tu-dOV"/>
+                <constraint firstItem="pqP-XC-EVJ" firstAttribute="leading" secondItem="aoE-al-nvA" secondAttribute="leading" constant="16" id="ymf-O5-IWt"/>
             </constraints>
             <point key="canvasLocation" x="-147.32824427480915" y="-507.04225352112678"/>
         </view>
