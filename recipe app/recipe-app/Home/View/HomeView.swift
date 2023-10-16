@@ -49,6 +49,7 @@ class HomeView: UIViewController {
     
     private func setupSkeleton() {
         self.recipeTableView.isSkeletonable = true
+        self.recipeTableView.showAnimatedGradientSkeleton()
     }
 }
 
