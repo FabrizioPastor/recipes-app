@@ -18,10 +18,7 @@ class HomeView: UIViewController {
     }
     
     //MARK: - Atributos
-    private var router = HomeRouter()
-    private var viewModel = HomeViewModel()
-    private var recipes = [Recipe]()
-    private var disposeBag = DisposeBag()
+    var viewModel: HomeViewModel?
     
     //MARK: - Outlets
     @IBOutlet weak var recipeTableView: UITableView!
@@ -29,12 +26,11 @@ class HomeView: UIViewController {
     //MARK: - Métodos de clase
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.bind(view: self, router: router)
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
         configureTableView()
         setupSkeleton()
-        getData()
+        viewModel?.onViewDidLoad()
         self.navigationItem.title = "Recipes App"
     }
 
@@ -43,16 +39,6 @@ class HomeView: UIViewController {
         recipeTableView.register(UINib(nibName: "CustomRecipeCell", bundle: Bundle.main), forCellReuseIdentifier: "CustomRecipeCell")
     }
     
-    func getData() {
-        self.recipeTableView.showAnimatedGradientSkeleton()
-        viewModel.getRecipesData()
-            .subscribe(on: MainScheduler.instance)
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { recipes in
-                self.recipes = recipes
-                self.reloadTableView()
-            }).disposed(by: disposeBag)
-    }
     
     func reloadTableView() {
         DispatchQueue.main.async {
@@ -73,25 +59,27 @@ extension HomeView: UITableViewDelegate, SkeletonTableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.makeDetailView(recipeId: self.recipes[indexPath.row].id)
+        //viewModel.makeDetailView(recipeId: self.recipes[indexPath.row].id)
     }
         
     //MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        recipes.count
+        viewModel?.recipes?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomRecipeCell", for: indexPath) as? CustomRecipeCell else { return UITableViewCell() }
         
-        cell.recipeName.text = recipes[indexPath.row].name
-        cell.recipeDificulty.text = recipes[indexPath.row].dificulty
-        cell.recipeTime.text = String(recipes[indexPath.row].duration)
-        cell.recipeCountry.text = recipes[indexPath.row].originContry
-        
-        guard let url = URL(string: recipes[indexPath.row].image ) else { return cell }
-        cell.reipeImage.sd_setImage(with: url, completed: nil)
+        if let recipes = viewModel?.recipes {
+            cell.recipeName.text = recipes[indexPath.row].name
+            cell.recipeDificulty.text = recipes[indexPath.row].dificulty
+            cell.recipeTime.text = String(recipes[indexPath.row].duration)
+            cell.recipeCountry.text = recipes[indexPath.row].originContry
+            
+            guard let url = URL(string: recipes[indexPath.row].image ) else { return cell }
+            cell.reipeImage.sd_setImage(with: url, completed: nil)
+        }
         
         return cell
     }

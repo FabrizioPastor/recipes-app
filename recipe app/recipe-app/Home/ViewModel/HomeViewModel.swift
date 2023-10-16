@@ -10,22 +10,29 @@ import RxSwift
 
 class HomeViewModel {
     
-    private weak var view: HomeView?
-    private var router: HomeRouter?
+    private let view: HomeView
+    var recipes: [Recipe]?
     
-    func bind(view: HomeView, router: HomeRouter) {
+    init(view: HomeView) {
         self.view = view
-        self.router = router
-        
-        router.setSourceView(sourceView: view)
     }
     
-    func getRecipesData() -> Observable<[Recipe]> {
-        return ApiManager.shared.getRecipes()
+    func onViewDidLoad() {
+        getRecipesData()
+    }
+    
+    private func getRecipesData() {
+        Task {
+            guard let recipes = await ApiManager.shared.getRecipes() else {
+                self.recipes = []
+                return
+            }
+            self.recipes = recipes
+            await view.reloadTableView()
+        }
     }
     
     func makeDetailView(recipeId: Int) {
-        router?.navegateToDetail(recipeId: recipeId)
     }
     
 }
