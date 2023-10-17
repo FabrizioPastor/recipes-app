@@ -10,6 +10,9 @@ import SkeletonView
 
 class CustomRecipeCell: UITableViewCell {
 
+    
+    static var identifier = "\(CustomRecipeCell.self)"
+    
     //MARK: - Outlets
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var reipeImage: UIImageView!
@@ -31,8 +34,6 @@ class CustomRecipeCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     //MARK: - Métodos de usuario

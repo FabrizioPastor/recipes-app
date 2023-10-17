@@ -36,7 +36,9 @@ class HomeView: UIViewController {
 
     //MARK: - Métodos de usuario
     func configureTableView() {
-        recipeTableView.register(UINib(nibName: "CustomRecipeCell", bundle: Bundle.main), forCellReuseIdentifier: "CustomRecipeCell")
+        recipeTableView.register(UINib(nibName: CustomRecipeCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: CustomRecipeCell.identifier)
+        recipeTableView.estimatedRowHeight = 170
+        recipeTableView.rowHeight = 170
     }
     
     
@@ -54,10 +56,6 @@ class HomeView: UIViewController {
 }
 
 extension HomeView: UITableViewDelegate, SkeletonTableViewDataSource {
-    //MARK: - UITableViewDelegate
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //viewModel.makeDetailView(recipeId: self.recipes[indexPath.row].id)
