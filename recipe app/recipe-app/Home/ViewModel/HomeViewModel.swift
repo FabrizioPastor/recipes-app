@@ -10,6 +10,7 @@ import RxSwift
 
 class HomeViewModel {
     
+    let title = "Recipes App"
     private let view: HomeView
     var recipes: [Recipe]?
     

@@ -6,8 +6,8 @@ target 'recipe-app' do
   use_frameworks!
 
   # Pods for recipe-app
+  pod 'Kingfisher', '~> 7.0'
   pod 'SkeletonView'
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
-  pod 'SDWebImage'
 end

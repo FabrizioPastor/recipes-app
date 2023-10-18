@@ -37,6 +37,16 @@ class CustomRecipeCell: UITableViewCell {
     }
     
     //MARK: - Métodos de usuario
+    public func update(with model: Recipe) {
+        recipeName.text = model.name
+        recipeDificulty.text = model.dificulty
+        recipeTime.text = String(model.duration)
+        recipeCountry.text = model.originContry
+        
+        guard let url = URL(string: model.image ) else { return }
+        reipeImage.kf.setImage(with: url)
+    }
+    
     private func setupSkeleton() {
         self.isSkeletonable = true
         self.reipeImage.isSkeletonable = true

@@ -74,7 +74,7 @@ class DetailView: UIViewController {
             self.recipeTitle.text = self.recipeDetail?.name
             self.recipeDescription.text = self.recipeDetail?.description
             guard let url = URL(string: self.recipeDetail?.image ?? "") else { return }
-            self.recipeBackgrounImage.sd_setImage(with: url, completed: nil)
+            self.recipeBackgrounImage.kf.setImage(with: url)
         }
     }
     

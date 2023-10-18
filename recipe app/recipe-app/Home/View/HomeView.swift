@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 import RxSwift
-import SDWebImage
+import Kingfisher
 import SkeletonView
 
 class HomeView: UIViewController {
@@ -16,6 +16,9 @@ class HomeView: UIViewController {
     deinit {
         print("Liberando homeView")
     }
+    
+    //MARK: - Constants
+    private let skeletonViewRows = 5
     
     //MARK: - Atributos
     var viewModel: HomeViewModel?
@@ -28,19 +31,23 @@ class HomeView: UIViewController {
         super.viewDidLoad()
         recipeTableView.delegate = self
         recipeTableView.dataSource = self
-        configureTableView()
+        stupViews()
         setupSkeleton()
         viewModel?.onViewDidLoad()
-        self.navigationItem.title = "Recipes App"
     }
 
     //MARK: - Métodos de usuario
-    func configureTableView() {
+    private func stupViews() {
+        self.navigationItem.title = viewModel?.title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        configureTableView()
+    }
+    
+    private func configureTableView() {
         recipeTableView.register(UINib(nibName: CustomRecipeCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: CustomRecipeCell.identifier)
         recipeTableView.estimatedRowHeight = 170
         recipeTableView.rowHeight = 170
     }
-    
     
     func reloadTableView() {
         DispatchQueue.main.async {
@@ -68,16 +75,10 @@ extension HomeView: UITableViewDelegate, SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomRecipeCell", for: indexPath) as? CustomRecipeCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomRecipeCell.identifier, for: indexPath) as? CustomRecipeCell else { return UITableViewCell() }
         
         if let recipes = viewModel?.recipes {
-            cell.recipeName.text = recipes[indexPath.row].name
-            cell.recipeDificulty.text = recipes[indexPath.row].dificulty
-            cell.recipeTime.text = String(recipes[indexPath.row].duration)
-            cell.recipeCountry.text = recipes[indexPath.row].originContry
-            
-            guard let url = URL(string: recipes[indexPath.row].image ) else { return cell }
-            cell.reipeImage.sd_setImage(with: url, completed: nil)
+            cell.update(with: recipes[indexPath.row])
         }
         
         return cell
@@ -85,11 +86,11 @@ extension HomeView: UITableViewDelegate, SkeletonTableViewDataSource {
     
     //MARK: - SkeletonTableViewDataSource
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-       return "CustomRecipeCell"
+       return CustomRecipeCell.identifier
     }
      
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return skeletonViewRows
     }
 }
 
