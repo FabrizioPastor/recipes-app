@@ -27,8 +27,9 @@ class CustomRecipeCell: UITableViewCell {
     
     //MARK: - Métodos de clase
     override func awakeFromNib() {
-        super.awakeFromNib()
         setupSkeleton()
+        startSkeleton()
+        super.awakeFromNib()
         recipeName.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
     
@@ -44,7 +45,9 @@ class CustomRecipeCell: UITableViewCell {
         recipeCountry.text = model.originContry
         
         guard let url = URL(string: model.image ) else { return }
-        reipeImage.kf.setImage(with: url)
+        reipeImage.kf.setImage(with: url) { _ in
+            self.stopSkeleton()
+        }
     }
     
     private func setupSkeleton() {
@@ -58,6 +61,14 @@ class CustomRecipeCell: UITableViewCell {
         self.timeTitle.isSkeletonable = true
         self.dificultyTitle.isSkeletonable = true
         self.originTitle.isSkeletonable = true
+    }
+    
+    private func startSkeleton() {
+        self.reipeImage.showAnimatedGradientSkeleton()
+    }
+    
+    private func stopSkeleton() {
+        self.reipeImage.hideSkeleton()
     }
     
 }

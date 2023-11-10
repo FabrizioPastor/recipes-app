@@ -118,16 +118,16 @@
 		491C3CD6291A0BF800A62CDD /* recipe-app */ = {
 			isa = PBXGroup;
 			children = (
-				45EB4E022ADD023B009AF864 /* Common */,
+				491C3CE5291A0BF900A62CDD /* Info.plist */,
 				491C3CD7291A0BF800A62CDD /* AppDelegate.swift */,
 				491C3CD9291A0BF800A62CDD /* SceneDelegate.swift */,
-				491C3CEB291A0CCD00A62CDD /* Home */,
+				491C3CE0291A0BF900A62CDD /* Assets.xcassets */,
+				45EB4E022ADD023B009AF864 /* Common */,
 				491C3CEC291A0CD400A62CDD /* Detail */,
+				491C3CEB291A0CCD00A62CDD /* Home */,
+				491C3CE2291A0BF900A62CDD /* LaunchScreen.storyboard */,
 				491C3CED291A0CDF00A62CDD /* Map */,
 				493632BD291A9F9500FA9BB4 /* Resources */,
-				491C3CE0291A0BF900A62CDD /* Assets.xcassets */,
-				491C3CE2291A0BF900A62CDD /* LaunchScreen.storyboard */,
-				491C3CE5291A0BF900A62CDD /* Info.plist */,
 			);
 			path = "recipe-app";
 			sourceTree = "<group>";

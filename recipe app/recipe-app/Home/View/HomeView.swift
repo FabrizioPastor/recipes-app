@@ -35,6 +35,10 @@ class HomeView: UIViewController {
         setupSkeleton()
         viewModel?.onViewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
 
     //MARK: - Métodos de usuario
     private func stupViews() {
